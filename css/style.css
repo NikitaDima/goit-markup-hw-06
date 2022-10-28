@@ -756,7 +756,7 @@ img {
     transform: translate(-50%, -50%);
     
     width: 528px;
-    height: 581px;
+    min-height: 581px;
     background-color: var(--bcg-modal);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
     0px 1px 1px rgba(0, 0, 0, 0.14), 
@@ -782,6 +782,8 @@ img {
     cursor: pointer;
     
 }
+
+/* Стилі форм модельного вікна */
 
 .title-form {
     margin-top: 40px;
@@ -823,6 +825,10 @@ img {
     border: 1px solid var(--modal-form-color);
     border-radius: 4px;
     outline: none;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus {
@@ -835,6 +841,9 @@ img {
     top: 50%;
     transform: translateY(-50%);
     fill: #212121;   
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-control:focus-within .icon-form {
@@ -850,14 +859,106 @@ img {
     border-radius: 4px;
     outline: none;
     resize: none;
+
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-textarea:focus {
     border-color: var(--modal-form-accent-color);
 }
 
+.checkbox {
+    display: block;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+
+}
+
+.input-checkbox {
+    appearance: none;
+}
 
 
+.label-checkbox {
+    position: relative;
+    padding-left: 23px;
+    
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+    color: var(--desc-text-color);
+    cursor: pointer;
+}
+
+.label-checkbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 15px;
+    background-image: url(../images/Vector-ramka.svg);
+    background-size: contain;
+    
+}
+
+.label-checkbox::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 15px;
+    background-image: url(../images/iconcheck1.svg);
+    background-size: contain;
+    opacity: 0;
+}
+
+.input-checkbox:checked + .label-checkbox::before {
+    opacity: 0;
+}
+
+.input-checkbox:checked + .label-checkbox::after {
+    opacity: 1;
+}
+
+.form-link {
+    color: var(--modal-form-accent-color);
+    text-decoration: underline;
+}
+
+.btn-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 200px;
+    height: 50px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.875;
+    color: var(--bcg-modal);
+    background-color: var(--modal-form-accent-color);
+    border: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.btn-form:hover {
+    background-color: #188CE8;
+}
 
 /* 
 @keyframes scale {
