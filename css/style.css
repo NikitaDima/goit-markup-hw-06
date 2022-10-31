@@ -629,9 +629,22 @@ img {
 .box-footer {
     display: flex;
     align-items: baseline;
-    gap: 70px;
-    
+    justify-content: space-between;    
 }
+
+.tumb-footer {
+    display: flex;
+    align-items: baseline;
+    gap: 70px;
+}
+
+/* .box-footer > .box-footer-logo {
+    margin-right: 70px;
+}
+
+.box-footer > .box-footer-social {
+    margin-right: 93px;
+} */
 
 
 .conteiner-footer {
@@ -727,11 +740,19 @@ img {
 /* Форма футера */
 
 /* .box-form {
-    margin-left: 93px;
+    margin-right: 0;
 } */
 
+.tumb-form {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 12px;
+}
+
 .input-footer {
-    padding: 15px 16px;
+    padding: 14px 16px;
     width: 358px;
     background-color: var(--bcg-footer);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -739,20 +760,17 @@ img {
 
     font-size: 16px;
     line-height: 1.25;
+    color: #ffffff;
 }
 
-.tumb-form {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    gap: 12px;
-}
 
 .btn-form-footer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 200px;
+    height: 50px;
+    letter-spacing: 0.06em;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.875;
@@ -835,14 +853,21 @@ img {
     border: 1px solid rgba(0, 0, 0, 0.1);
 
     cursor: pointer;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
     
+}
+
+.modal-button:hover {
+    fill: var(--icon-accent-color);
 }
 
 /* Стилі форм модельного вікна */
 
 .title-form {
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 
     font-weight: 700;
     font-size: 20px;
@@ -880,6 +905,9 @@ img {
     border: 1px solid var(--modal-form-color);
     border-radius: 4px;
     outline: none;
+    font-size: 12px;
+    line-height: 1.1666;
+    letter-spacing: 0.01em;
 
     transition-property: border-color;
     transition-duration: 250ms;
@@ -912,6 +940,9 @@ img {
     margin-bottom: 20px;
     border: 1px solid var(--modal-form-color);
     border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.1666;
+    letter-spacing: 0.01em;
     outline: none;
     resize: none;
 
